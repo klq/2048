@@ -552,6 +552,10 @@ hr {
   h1.title {
     font-size: 27px;
     margin-top: 15px; }
+ 
+  .tagline {
+    font-size: 22px;
+    font-style: bold;}
 
   .container {
     width: 280px;

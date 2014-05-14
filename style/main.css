@@ -339,10 +339,10 @@ hr {
     background: url('../tiles/hermes.jpg'); }
   .tile.tile-64 .tile-inner {
     color: #f9f6f2;
-    background: url('../tiles/amy.png'); }
+    background: url('../tiles/amy.jpg'); }
   .tile.tile-128 .tile-inner {
     color: #f9f6f2;
-    background: url('../tiles/Kif.png');
+    background: url('../tiles/Kif.jpg');
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
     font-size: 45px; }
     @media screen and (max-width: 520px) {
@@ -366,7 +366,7 @@ hr {
         font-size: 25px; } }
   .tile.tile-1024 .tile-inner {
     color: #f9f6f2;
-    background: url('../tiles/Zapp.png');;
+    background: url('../tiles/Zapp.jpg');;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
     font-size: 35px; }
     @media screen and (max-width: 520px) {

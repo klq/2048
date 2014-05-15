@@ -17,12 +17,18 @@ body {
 
 h1.title {
   font-size: 80px;
-  color: #671967;
+  /*color: #671967; leela purple #E66B25: fry orange*/ 
   font-weight: bold;
   margin: 0;
   padding: 0;
   display: inline-block;
-  float: left; }
+  float: left; 
+  color: #3F5F90;}
+
+#logo {
+  width:190px;
+  text-align:center;
+}
 
 .tagline {
   font-size: 43px;
@@ -31,11 +37,11 @@ h1.title {
   margin: 0;
   display: inline-block;
   float: left;
-  line-height: 1; }
+  line-height: 1;  }
 
 .title p{
   line-height: 0.6;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 @-webkit-keyframes move-up {
@@ -64,7 +70,8 @@ h1.title {
     opacity: 0; } }
 .scores-container {
   float: right;
-  text-align: right; }
+  text-align: right; 
+  vertical-align: middle; }
 
 .score-container, .best-container {
   position: relative;
@@ -78,7 +85,9 @@ h1.title {
   border-radius: 3px;
   color: white;
   margin-top: 8px;
-  text-align: center; }
+  text-align: center; 
+  vertical-align: middle; }
+
   .score-container:after, .best-container:after {
     position: absolute;
     width: 100%;
@@ -559,7 +568,11 @@ hr {
   h1.title {
     font-size: 27px;
     margin-top: 15px; }
- 
+  
+  #logo {
+    width:64px;
+    text-align:center;}
+
   .tagline {
     font-size: 16px;
     font-style: bold;}

@@ -20,16 +20,23 @@ h1.title {
   color: #671967;
   font-weight: bold;
   margin: 0;
-  display: block;
+  padding: 0;
+  display: inline-block;
   float: left; }
 
 .tagline {
-  font-size: 80px;
+  font-size: 43px;
   font-weight: bold;
   color: #671967;
   margin: 0;
-  display: block;
-  float: both; }
+  display: inline-block;
+  float: left;
+  line-height: 1; }
+
+.title p{
+  line-height: 0.6;
+  margin-bottom: 10px;
+}
 
 @-webkit-keyframes move-up {
   0% {
@@ -752,3 +759,6 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+
+
+

@@ -119,7 +119,7 @@ h1.title {
 
 .best-container:after {
   content: "Best"; }
-
+  
 p {
   margin-top: 0;
   margin-bottom: 10px;
@@ -163,7 +163,7 @@ hr {
   100% {
     opacity: 1; } }
 .game-container {
-  margin-top: 40px;
+  margin-top: 20px;
   position: relative;
   padding: 15px;
   cursor: default;
@@ -537,11 +537,15 @@ hr {
   clear: both; }
 
 .game-intro {
-  float: left;
+  text-align: center;
   line-height: 42px;
   margin-bottom: 0; }
 
-.restart-button {
+.button-set {
+  text-align: center;
+}
+
+.restart-button, .save-button, .load-button {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
@@ -550,9 +554,8 @@ hr {
   color: #f9f6f2;
   height: 40px;
   line-height: 42px;
-  display: block;
   text-align: center;
-  float: right; }
+}
 
 .game-explanation {
   margin-top: 50px; }
@@ -590,17 +593,22 @@ hr {
     margin-bottom: 10px; }
 
   .game-intro {
-    width: 55%;
+    font-size: 14px;
     display: block;
     box-sizing: border-box;
     line-height: 1.65; }
 
-  .restart-button {
-    width: 42%;
+  .restart-button, .save-button, .load-button{
+    width: 28%;
     padding: 0;
-    display: block;
+    display: inline-block;
     box-sizing: border-box;
     margin-top: 2px; }
+
+  .restart-button:after { content: "NEW";} 
+  .save-button:after { content: "SAVE";}  
+  .load-button:after { content: "LOAD";}  
+
 
   .game-container {
     margin-top: 17px;

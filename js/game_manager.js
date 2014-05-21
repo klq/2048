@@ -22,15 +22,25 @@ GameManager.prototype.restart = function () {
   this.setup();
 };
 
-// Save the current status
+// Save current game status
 GameManager.prototype.save = function () {
   // save the current game to the saveload storage Manager
   this.storageManager.setSavedState(this.serialize());
-  var previousState2 = this.storageManager.getSavedState();
- 
+  
+  // give user visualization that game is saved
+  var saveButton = document.querySelector(".save-button");
+  // Setting the textContent clears all the children
+  // Keeps only the text of the first child (button text)
+  saveButton.textContent = saveButton.firstChild.textContent;
+
+  // add a child div to display "saved" text
+  var addition = document.createElement("div");
+  addition.classList.add("save-addition");
+  addition.textContent = "Saved";
+  saveButton.appendChild(addition); 
 };
 
-// Load the last saved status
+// Load the saved game status
 GameManager.prototype.load = function () {
   var previousState2 = this.storageManager.getSavedState();
 

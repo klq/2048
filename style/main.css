@@ -98,10 +98,10 @@ h1.title {
     line-height: 13px;
     text-align: center;
     color: #eee4da; }
+  
   .score-container .score-addition, .best-container .score-addition {
     position: absolute;
     right: 30px;
-    color: red;
     font-size: 25px;
     line-height: 25px;
     font-weight: bold;
@@ -113,7 +113,7 @@ h1.title {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
-
+  
 .score-container:after {
   content: "Score"; }
 
@@ -546,6 +546,7 @@ hr {
 }
 
 .restart-button, .save-button, .load-button {
+  position: relative;
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
@@ -556,6 +557,21 @@ hr {
   line-height: 42px;
   text-align: center;
 }
+  .save-button .save-addition {
+    position: absolute;
+    right: 30px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(80, 80, 80, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; 
+  }
 
 .game-explanation {
   margin-top: 50px; }
@@ -598,7 +614,7 @@ hr {
     box-sizing: border-box;
     line-height: 1.65; }
 
-  .restart-button, .save-button, .load-button{
+  .restart-button, .save-button, .load-button {
     width: 28%;
     padding: 0;
     display: inline-block;
@@ -607,6 +623,10 @@ hr {
     font-size: 12px; 
     height: 30px;
     line-height: 30px; }
+
+    .save-button .save-addition {
+      font-size: 12px;
+    }
 
   /*.restart-button:after {content: "NEW";}
   .save-button:after {content: "SAVE";}

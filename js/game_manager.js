@@ -9,6 +9,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+  this.inputManager.on("save", this.save.bind(this));
+  this.inputManager.on("load", this.load.bind(this));
 
   this.setup();
 }
@@ -19,6 +21,37 @@ GameManager.prototype.restart = function () {
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
 };
+
+// Save the current status
+GameManager.prototype.save = function () {
+  // save the current game to the saveload storage Manager
+  this.storageManager.setSavedState(this.serialize());
+  var previousState2 = this.storageManager.getSavedState();
+ 
+};
+
+// Load the last saved status
+GameManager.prototype.load = function () {
+  var previousState2 = this.storageManager.getSavedState();
+
+  // Reload the game from the previous saved if present
+  if (previousState2) {
+    this.grid        = new Grid(previousState2.grid.size,
+                                previousState2.grid.cells); // Reload grid
+    this.score       = previousState2.score;
+    this.over        = previousState2.over;
+    this.won         = previousState2.won;
+    this.keepPlaying = previousState2.keepPlaying;
+
+  } else {
+    console.log("Nothing to load!")
+  }
+  
+  // Update the actuator
+  this.actuate();
+
+};
+
 
 // Keep playing after winning (allows going over 2048)
 GameManager.prototype.keepPlaying = function () {
@@ -99,8 +132,8 @@ GameManager.prototype.actuate = function () {
     bestScore:  this.storageManager.getBestScore(),
     terminated: this.isGameTerminated()
   });
-
 };
+
 
 // Represent the current game as an object
 GameManager.prototype.serialize = function () {

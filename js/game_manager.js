@@ -42,9 +42,14 @@ GameManager.prototype.save = function () {
 
 // Load the saved game status
 GameManager.prototype.load = function () {
-  var previousState2 = this.storageManager.getSavedState();
+  // if game is lost, than remove the lost message first 
+  if (this.over || this.won) {
+      this.actuator.continueGame();
+  }
 
   // Reload the game from the previous saved if present
+  var previousState2 = this.storageManager.getSavedState();
+
   if (previousState2) {
     this.grid        = new Grid(previousState2.grid.size,
                                 previousState2.grid.cells); // Reload grid
